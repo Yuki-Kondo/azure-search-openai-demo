@@ -42,7 +42,7 @@ const Layout = () => {
                             </li>
                             <li className={styles.headerNavLeftMargin}>
                                 <NavLink to="/qa" className={({ isActive }) => (isActive ? styles.headerNavPageLinkActive : styles.headerNavPageLink)}>
-                                    社内文書検索
+                                    AIチャット活用方法検索
                                 </NavLink>
                             </li>
                             <li className={styles.headerNavLeftMargin}>

@@ -67,11 +67,11 @@ param openAiSkuName string = 'S0'
 // param cognitiveServicesSkuName string = 'S0'
 
 param gptDeploymentName string = 'davinci'
-param gptDeploymentCapacity int = 30
-param gptModelName string = 'gpt-35-turbo-16k'
+param gptDeploymentCapacity int = 10
+param gptModelName string = 'gpt-4'
 param chatGptDeploymentName string = 'chat'
-param chatGptDeploymentCapacity int = 30
-param chatGptModelName string = 'gpt-35-turbo-16k'
+param chatGptDeploymentCapacity int = 10
+param chatGptModelName string = 'gpt-4'
 param embeddingDeploymentName string = 'embedding'
 param embeddingDeploymentCapacity int = 30
 param embeddingModelName string = 'text-embedding-ada-002'

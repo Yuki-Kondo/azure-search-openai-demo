@@ -139,10 +139,10 @@ export function Component(): JSX.Element {
         <div className={styles.oneshotContainer}>
             <div className={styles.oneshotTopSection}>
                 <SettingsButton className={styles.settingsButton} onClick={() => setIsConfigPanelOpen(!isConfigPanelOpen)} />
-                <h1 className={styles.oneshotTitle}>社内文書検索</h1>
+                <h1 className={styles.oneshotTitle}>AIチャット活用方法検索</h1>
                 <div className={styles.oneshotQuestionInput}>
                     <QuestionInput
-                        placeholder="Example: Does my plan cover annual eye exams?"
+                        placeholder="例: 回答できること について教えてください。"
                         disabled={isLoading}
                         onSend={question => makeApiRequest(question)}
                     />

@@ -22,19 +22,19 @@ class ChatReadRetrieveReadApproach(ChatApproach):
     """
     Cognitive SearchとOpenAIのAPIを直接使用した、シンプルなretrieve-then-readの実装です。はじめに検索で上位の文書を取得し、それを使ってプロンプトを作成し、OpenAIを使ってそのプロンプトを使った回答を生成します。
     """
-    system_message_chat_conversation = """アシスタントは、ChatGPTにおけるプロンプトの書き方や業務に関する質問をサポートします。回答は簡潔にしてください。
+    system_message_chat_conversation = """アシスタントは、ChatGPTにおけるプロンプトの書き方や業務支援に関する質問をサポートします。回答は簡潔にしてください。
 {follow_up_questions_prompt}
 {injected_prompt}
 """
     follow_up_questions_prompt_content = """ChatGPTにおけるプロンプトの書き方や業務支援について、ユーザーが次に尋ねそうな質問を3つ作成します。"""
 
-    query_prompt_template = """以下は、これまでの会話の履歴と、ChatGPTのプロンプトに関するナレッジベースで検索して回答する必要があります。
+    query_prompt_template = """以下は、これまでの会話の履歴と、ChatGPTのプロンプトや業務支援に関するナレッジベースで検索して回答する必要があります。
 """
     query_prompt_few_shots = [
-        {'role' : USER, 'content' : '文章添削を行うプロンプトについて教えて' },
-        {'role' : ASSISTANT, 'content' : '文章添削を行うためのプロンプト例を表示' },
-        {'role' : USER, 'content' : 'エラー解析をしたい場合のプロンプトは？' },
-        {'role' : ASSISTANT, 'content' : 'エラー解析を行うためのプロンプト例を表示' }
+        {'role' : USER, 'content' : '文章の要約を行うプロンプトについて教えて' },
+        {'role' : ASSISTANT, 'content' : '文章の要約を行うためのプロンプト例を表示' },
+        {'role' : USER, 'content' : '次の文章を要約してください。入力文：要約したい文章' },
+        {'role' : ASSISTANT, 'content' : '入力分を要約した結果を表示' }
     ]
 
     def __init__(self, search_client: SearchClient, chatgpt_deployment: str, chatgpt_model: str, embedding_deployment: str, sourcepage_field: str, content_field: str):
