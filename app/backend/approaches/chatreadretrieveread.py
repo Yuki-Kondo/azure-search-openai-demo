@@ -22,13 +22,13 @@ class ChatReadRetrieveReadApproach(ChatApproach):
     """
     Cognitive SearchとOpenAIのAPIを直接使用した、シンプルなretrieve-then-readの実装です。はじめに検索で上位の文書を取得し、それを使ってプロンプトを作成し、OpenAIを使ってそのプロンプトを使った回答を生成します。
     """
-    system_message_chat_conversation = """アシスタントは、ChatGPTにおけるプロンプトの書き方や業務支援に関する質問をサポートします。回答は簡潔にしてください。
+    system_message_chat_conversation = """アシスタントは、一般業務に関する様々な質問やChatGPTによるタスクの実行をサポートします。回答は簡潔にしてください。
 {follow_up_questions_prompt}
 {injected_prompt}
 """
-    follow_up_questions_prompt_content = """ChatGPTにおけるプロンプトの書き方や業務支援について、ユーザーが次に尋ねそうな質問を3つ作成します。"""
+    follow_up_questions_prompt_content = """一般業務に関する様々な質問やChatGPTによるタスクの実行について、ユーザーが次に尋ねそうな質問を3つ作成します。"""
 
-    query_prompt_template = """以下は、これまでの会話の履歴と、ChatGPTのプロンプトや業務支援に関するナレッジベースで検索して回答する必要があります。
+    query_prompt_template = """以下は、これまでの会話の履歴と、ChatGPTの業務支援に関するナレッジベースで検索して回答する必要があります。
 """
     query_prompt_few_shots = [
         {'role' : USER, 'content' : '文章の要約を行うプロンプトについて教えて' },

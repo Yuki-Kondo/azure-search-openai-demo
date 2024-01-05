@@ -139,7 +139,7 @@ export function Component(): JSX.Element {
         <div className={styles.oneshotContainer}>
             <div className={styles.oneshotTopSection}>
                 <SettingsButton className={styles.settingsButton} onClick={() => setIsConfigPanelOpen(!isConfigPanelOpen)} />
-                <h1 className={styles.oneshotTitle}>AIチャット活用方法検索</h1>
+                <h1 className={styles.oneshotTitle}>AIチャット活用チュートリアル</h1>
                 <div className={styles.oneshotQuestionInput}>
                     <QuestionInput
                         placeholder="例: 回答できること について教えてください。"

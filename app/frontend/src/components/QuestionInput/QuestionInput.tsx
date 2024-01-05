@@ -37,7 +37,9 @@ export const QuestionInput = ({ onSend, disabled, placeholder, clearOnSend }: Pr
         if (!newValue) {
             setQuestion("");
         } else if (newValue.length <= 1000) {
-            setQuestion(newValue);
+            // 改行を含める
+            const newValueWithLineBreaks = newValue.replace(/\n/g, "\r\n");
+            setQuestion(newValueWithLineBreaks);
         }
     };
 
